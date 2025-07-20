@@ -1,0 +1,119 @@
+/* Overall page setup */
+body {
+  font-family: "Arial", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(tic-tac-toe.avif);
+  margin: 0;
+  color: #eb343d;
+}
+
+.container {
+  text-align: center;
+  background-image: url(image.jpg);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 350px;
+}
+
+/* Heading styles */
+h1 {
+  color: #eb343d;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+
+/* Game grid styles */
+.game {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  font-size: 3rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.cell:hover {
+  transform: scale(1.1);
+  background-color: #ffd700;
+}
+
+.cell.X {
+  color: #ff6f61;
+}
+
+.cell.O {
+  color: #1305d4;
+}
+
+/* Status and Restart Button */
+#status {
+  font-size: 2.4rem;
+  margin: 20px 0;
+}
+
+#restart {
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  background-color: #08245a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s;
+}
+
+#restart:hover {
+  background-color: #ea12c9;
+  transform: scale(1.05);
+}
+
+/* Win animation */
+@keyframes winAnimation {
+  0% {
+    background-color: #fff;
+  }
+  50% {
+    background-color: #ffdb58;
+  }
+  100% {
+    background-color: #ea12c9;
+  }
+}
+
+.win-cell {
+  animation: winAnimation 1s infinite;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .game {
+    grid-template-columns: repeat(3, 80px);
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 2.5rem;
+  }
+}
